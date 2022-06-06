@@ -5,9 +5,11 @@ class Program
     {
         Console.WriteLine("Перед вами очередь в поликлинике? Тогда эта программа для вас. Сколько перед вами людей?");
         int people = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine("В среднем приём одного человека 20 минут...");
-        int timeHourLeft = people * 20 / 60;
-        int timeMinuteLeft = people * 20 % 60;
-        Console.WriteLine($"Сочувствую, вам осталось сидеть : {timeHourLeft} часов и {timeMinuteLeft} минут");
+        int averageWaitingTime = 20;
+        int minutesInHour = 60;
+        Console.WriteLine($"В среднем приём одного человека {averageWaitingTime} минут...");
+        int hoursLeft = people * averageWaitingTime / minutesInHour;
+        int minutesLeft = people * averageWaitingTime % minutesInHour;
+        Console.WriteLine($"Сочувствую, вам осталось сидеть : {hoursLeft} часов и {minutesLeft} минут");
     }
 }
